@@ -22,6 +22,8 @@
         :key="item.id"
         :item="item"
         @click.native="showPost(item.id)"></Post>
+
+        <infinite-loading @infinite="infiniteHandler"></infinite-loading>
       </div>
 
       <AddPost :isActiveAddPost="isActiveAddPost" @close="isActiveAddPost = false"></AddPost>
@@ -34,6 +36,7 @@
 import Post from './components/Post.vue';
 import AddPost from './components/AddPost.vue';
 import DetailsPost from './components/DetailsPost.vue';
+import InfiniteLoading from 'vue-infinite-loading';
 
 export default {
   name: 'App',
@@ -42,12 +45,14 @@ export default {
     detailsPost: {
       isShow: false,
       item: null
-    }
+    },
+    page: 1
   }),
   components: {
     Post,
     AddPost,
-    DetailsPost
+    DetailsPost,
+    InfiniteLoading
   },
   computed: {
     getAllPosts(){
@@ -55,6 +60,18 @@ export default {
     }
   },
   methods: {
+    infiniteHandler($state){
+      this.$store.commit('addPost', {
+        id: Math.floor(Math.random() * 10000),
+        created_at: new Date(),
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        comments: []
+      });
+      this.page++;
+      this.page < 15 ? $state.loaded() : $state.complete();
+    },
     showPost(payload){
       this.detailsPost.isShow = true;
       this.detailsPost.item = this.$store.getters.findPost(payload);

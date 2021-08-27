@@ -38,25 +38,25 @@ export default [
     {
         id: Math.floor(Math.random() * 1000),
         created_at: new Date(),
-        title: 'Продвинутый Golang. Урок 3: REST',
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-        shortDescription: 'В этом ролике мы добавим конфигурацию проекта, напишем config на YAML и запустим приложение с использованием unix-сокета.',
+        title: 'White House More Than Doubles Its Inflation Forecast in New Update - The Wall Street Journal',
+        description: `Administration expects consumer prices to rise 4.8% in the fourth quarter from a year earlier, and lifts projections for growth this year`,
+        shortDescription: 'WASHINGTONThe White House more than doubled its forecast for annual inflation in new projections released Friday, as supply chain disruptions stemming from the Covid-19 pandemic continue to',
         comments: [...default_comments]
     },
     {
         id: Math.floor(Math.random() * 1000),
         created_at: new Date(),
-        title: 'До и после: как Agile поменял процессы в команде разработки',
-        description: '',
-        shortDescription: 'Компания Galileosky производит и продает GPS-трекеры, которые реагируют на внешние события и работают с любой периферией — от простых реле до сложных дизельных',
+        title: 'Rivian Seeks $80 Billion Valuation In IPO',
+        description: `Rivian announced today that it has filed its S1 with the Securities and Exchange Commission for an IPO filing this November, according to Automotive News. The news comes amid delays and setbacks as`,
+        shortDescription: 'Rivian announced today that it has filed its S1 with the Securities and Exchange Commission for an IPO filing this November, according to Automotive News.',
         comments: [...default_comments]
     },
     {
         id: Math.floor(Math.random() * 1000),
         created_at: new Date(),
-        title: '1',
-        description: '3',
-        shortDescription: '2',
+        title: 'Tesla files to sell electricity in Texas retail market',
+        description: `Electric-vehicle maker Tesla (TSLA) filed earlier this month with the Public Utility Commission of Texas to sell electricity in the retail market.\r\nThe news was first reported by Texas Monthly.\r\nTes`,
+        shortDescription: 'Tesla files with the Public Utility Commission of Texas to sell electricity in the retail market, a report says.',
         comments: [...default_comments]
     }
 ]
